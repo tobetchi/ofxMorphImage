@@ -10,13 +10,14 @@
 int main( ){
     
 #ifdef 	USE_PROGRAMMABLE_GL
-    ofPtr<ofBaseRenderer> renderer(new ofGLProgrammableRenderer(false));
-    ofSetCurrentRenderer(renderer, false);
-    //	ofSetCurrentRenderer(ofGLProgrammableRenderer::TYPE);
+    ofGLWindowSettings settings;
+    settings.setGLVersion(3, 2);
+    settings.width = 640;
+    settings.height = 480;
+    ofCreateWindow(settings);
+#else
+	ofSetupOpenGL(640, 480, OF_WINDOW);
 #endif
-
-    
-	ofSetupOpenGL(640,480,OF_WINDOW);			// <-------- setup the GL context
 
 	// this kicks off the running of my app
 	// can be OF_WINDOW or OF_FULLSCREEN
