@@ -24,8 +24,8 @@ void ofxMorphImage::setup(int w, int h, int stepSize = 2, float rescale = 0.5) {
     ySteps = 1+((rescale * h) / stepSize);
     for(int y = 0; y < ySteps; y++) {
         for(int x = 0; x < xSteps; x++) {
-            srcMesh.addVertex(ofVec2f(x, y) * stepSize / rescale);
-            targetMesh.addVertex(ofVec2f(x, y) * stepSize / rescale);
+            srcMesh.addVertex(ofVec3f(x, y, 0) * stepSize / rescale);
+            targetMesh.addVertex(ofVec3f(x, y, 0) * stepSize / rescale);
         }
     }
     for(int y = 0; y + 1 < ySteps; y++) {

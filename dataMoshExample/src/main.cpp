@@ -12,8 +12,7 @@ int main( ){
 #ifdef 	USE_PROGRAMMABLE_GL
     ofGLWindowSettings settings;
     settings.setGLVersion(3, 2);
-    settings.width = 640;
-    settings.height = 480;
+    settings.setSize(640, 480);
     ofCreateWindow(settings);
 #else
 	ofSetupOpenGL(640, 480, OF_WINDOW);
